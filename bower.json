@@ -1,0 +1,16 @@
+{
+  "name": "peskov",
+  "version": "0.0.0",
+  "dependencies": {
+    "bootstrap": "~3.0.0",
+    "font-awesome": "~4.0.0",
+    "modernizr": "~2.6.2",
+    "jquery": "~1.9.1",
+    "autoNumeric": "~1.9.30",
+    "Chart.js": "~1.0.2"
+  },
+  "devDependencies": {
+    "chai": "~3.2.0",
+    "mocha": "~2.2.5"
+  }
+}
