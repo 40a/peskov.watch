@@ -26,17 +26,26 @@ $ ->
         })
 
         peskovMonthSalary = Math.ceil(watchPrice / (PESKOV_SALARY_YEAR / 12));
-        $('.peskov-month-to-work').text(peskovMonthSalary);
 
-        $('.avg-pension').text(Math.ceil(watchPrice/AVG_PENSION));
-        $('.min-pension').text(Math.ceil(watchPrice/MIN_PENSION));
+        avgPension = Math.ceil watchPrice / AVG_PENSION
+        minPension = Math.ceil watchPrice / MIN_PENSION
+        avgSalary = Math.ceil watchPrice / AVG_SALARY
+        minSalary = Math.ceil watchPrice / MIN_SALARY
+        childAllowance = Math.ceil watchPrice / CHILD_ALLOWANCE
 
+        $('.peskov-month-to-work').text peskovMonthSalary
+        $('.avg-pension').text avgPension
+        $('.min-pension').text minPension
+        $('.avg-salary').text avgSalary
+        $('.min-salary').text minSalary
+        $('.child-allowance').text childAllowance
 
-        $('.avg-salary').text(Math.ceil(watchPrice/AVG_SALARY));
-        $('.min-salary').text(Math.ceil(watchPrice/MIN_SALARY));
-
-        $('.child-allowance').text(Math.ceil(watchPrice/CHILD_ALLOWANCE));
-
+        $('.peskov-month-to-work-text').text pluralText(peskovMonthSalary, ['месячная зарплата', 'месячные зарплаты', 'месячных зарплат'])
+        $('.avg-pension-text').text pluralText(avgPension, ['средняя', 'средние', 'средних'])
+        $('.min-pension-text').text pluralText(minPension, ['минимальная пенсия', 'минимальные пенсии', 'минимальных пенсий'])
+        $('.avg-salary-text').text pluralText(avgSalary, ['средняя', 'средние', 'средних'])
+        $('.min-salary-text').text pluralText(minSalary, ['минимальная зарплата', 'минимальные зарплаты', 'минимальных зарплат'])
+        $('.child-allowance-text').text pluralText(childAllowance, ['пособие', 'пособия', 'пособий'])
 
         dates = []
         watchPrices = []
