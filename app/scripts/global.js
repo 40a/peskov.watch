@@ -10,3 +10,15 @@ function addCommas(nStr)
   }
   return x1 + x2 + ' ₽';
 }
+function pluralText(value, suffix)
+{
+  var cases, text;
+  value = Math.round(value);
+  if (suffix.length === 2) {
+    text = suffix[value > 1 ? 1 : 0];
+  } else {
+    cases = [2, 0, 1, 1, 1, 2];
+    text = suffix[value % 100 > 4 && value % 100 < 20 ? 2 : cases[(value % 10 < 5 ? value % 10 : 5)]];
+  }
+  return text;
+};
